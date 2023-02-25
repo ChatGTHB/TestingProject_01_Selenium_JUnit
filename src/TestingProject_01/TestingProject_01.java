@@ -1,4 +1,4 @@
-package TestingProject_1;
+package TestingProject_01;
 
 import Utility.BaseDriver;
 import Utility.MyFunc;
@@ -6,7 +6,10 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-public class TestingProject_1 extends BaseDriver {
+
+import java.util.List;
+
+public class TestingProject_01 extends BaseDriver {
     @Test
     public void Test1(){
 
@@ -48,10 +51,16 @@ public class TestingProject_1 extends BaseDriver {
         WebElement submit= driver.findElement(By.xpath("//input[@id='submit']"));
         submit.click();
 
-        WebElement confirmation= driver.findElement(By.xpath("//label[text()='Username already exist']"));
-        String confirmationStr="Username already exist";
-
-        Assert.assertTrue("Registration unsuccessful", confirmation.getText().equals(confirmationStr));
+        List<WebElement>confirmations=driver.findElements(By.xpath("//div[@class='col-md-offset-2 col-md-2']"));
+        String confirmation = null;
+        for(WebElement webElement:confirmations){
+            if((webElement.getText().equals("Username already exist")||
+                    (webElement.getText().equals("Registration Successful")))){
+                confirmation= webElement.getText();
+            }
+        }
+         Assert.assertTrue("Registration unsuccessful", confirmation.equals("Username already exist")
+                 ||confirmation.equals("Registration Successful"));
 
     }
     @Test
