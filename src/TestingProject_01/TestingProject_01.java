@@ -16,41 +16,47 @@ public class TestingProject_01 extends BaseDriver {
         driver.get("https://itera-qa.azurewebsites.net/");
 
         MyFunc.Bekle(2);
-        WebElement signUp= driver.findElement(By.xpath("//a[text()='Sign Up']"));
+        WebElement signUp= driver.findElement(By.linkText("Sign Up"));
         signUp.click();
 
         MyFunc.Bekle(2);
-        WebElement firstName= driver.findElement(By.xpath("//input[@data-val-required='Please enter first name']"));
+        WebElement firstName= driver.findElement(By.id("FirstName"));
         firstName.sendKeys("Kerem");
 
         MyFunc.Bekle(2);
-        WebElement surname= driver.findElement(By.xpath("//input[@data-val-required='Please enter surname']"));
+        WebElement surname= driver.findElement(By.name("Surname"));
         surname.sendKeys("Yigit");
 
         MyFunc.Bekle(2);
-        WebElement eMail= driver.findElement(By.xpath("//input[@id='E_post']"));
+        WebElement eMail= driver.findElement(By.cssSelector("input[class='form-control text-box single-line'][id='E_post']"));
         eMail.sendKeys("kyigit@kmail.com");
 
         MyFunc.Bekle(2);
-        WebElement phoneNumber= driver.findElement(By.xpath("//input[@id='Mobile']"));
+        WebElement phoneNumber= driver.findElement(By.xpath("//label[text()='Mobile'] //following::input[1]"));
         phoneNumber.sendKeys("123456");
 
         MyFunc.Bekle(2);
-        WebElement userName= driver.findElement(By.xpath("//input[@id='Username']"));
-        userName.sendKeys("k.yigit");
+        WebElement userName= driver.findElement(By.cssSelector("input[data-val-required='Please enter username']"));
+        userName.sendKeys("k.yigitalp");
 
         MyFunc.Bekle(2);
-        WebElement password= driver.findElement(By.xpath("//input[@id='Password']"));
+        WebElement password= driver.findElement(By.id("Password"));
         password.sendKeys("123456");
 
         MyFunc.Bekle(2);
-        WebElement confirmPassword= driver.findElement(By.xpath("//input[@id='ConfirmPassword']"));
+        WebElement confirmPassword= driver.findElement(By.id("ConfirmPassword"));
         confirmPassword.sendKeys("123456");
 
         MyFunc.Bekle(2);
-        WebElement submit= driver.findElement(By.xpath("//input[@id='submit']"));
+        WebElement submit= driver.findElement(By.cssSelector("input[value='Submit']"));
         submit.click();
 
+        // Olması gereken kod satırları bunlardır
+//        WebElement confirmation=driver.findElement(By.xpath("//label[text()='Registration Successful']"));
+//        Assert.assertTrue("Registration unsuccessful", confirmation.getText().equals("Registration Successful"));
+
+
+        // Test denemelerinde aynı username'de hata almamak için geçici olarak test esnasında kullanılacak olan kod satırı
         List<WebElement>confirmations=driver.findElements(By.xpath("//div[@class='col-md-offset-2 col-md-2']"));
         String confirmation = null;
         for(WebElement webElement:confirmations){
