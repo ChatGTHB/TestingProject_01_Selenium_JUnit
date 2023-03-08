@@ -11,7 +11,7 @@ import java.util.List;
 
 public class TestingProject_01 extends BaseDriver {
     @Test
-    public void Test1(){
+    public void test1(){
 
         driver.get("https://itera-qa.azurewebsites.net/");
 
@@ -70,7 +70,7 @@ public class TestingProject_01 extends BaseDriver {
 
     }
     @Test
-    public void Test2()
+    public void test2()
     {
 
         driver.get("https://itera-qa.azurewebsites.net/");
@@ -103,7 +103,7 @@ public class TestingProject_01 extends BaseDriver {
 
     }
     @Test
-    public void Test3()
+    public void test3()
     {
         driver.get("https://itera-qa.azurewebsites.net/");
 
