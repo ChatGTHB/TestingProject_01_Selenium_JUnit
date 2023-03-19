@@ -1,13 +1,11 @@
 package TestingProject_01;
 
 import utility.BaseDriver;
-import utility.MyFunction;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import java.util.List;
 
 public class TestingProject_01 extends BaseDriver {
     @Test
