@@ -1,8 +1,6 @@
 package utility;
 
 public class MyFunction {
-
-
     public static void wait(int sn)
     {
         try {
@@ -11,7 +9,4 @@ public class MyFunction {
             throw new RuntimeException(e);
         }
     }
-
-
-
 }
