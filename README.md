@@ -34,6 +34,9 @@ Test Case 3: New Customer Creation
 • Click the Create Button.
 
 
+================**************************************===================
+
+
 [TR]
 
 Test Projesi 1 (Selenium Projesi- JUnit)
