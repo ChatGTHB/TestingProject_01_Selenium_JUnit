@@ -34,7 +34,9 @@ Test Case 3: New Customer Creation
 • Click the Create Button.
 
 
-================**************************************===================
+
+
+
 
 
 [TR]
